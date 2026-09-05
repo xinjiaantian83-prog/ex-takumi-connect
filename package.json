@@ -1,0 +1,10 @@
+{
+  "name": "ex-takumi-connect",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-links.mjs",
+    "start": "python3 -m http.server 4175"
+  }
+}

@@ -1,0 +1,72 @@
+window.CONTRACTORS_DEMO_DATA = [
+  {
+    contractorId: "DEMO-CONTRACTOR-01",
+    businessName: "高松エクステリア（デモ）",
+    area: ["高松市", "坂出市"],
+    workCategories: ["カーポート", "フェンス", "門扉"],
+    acceptingCases: true,
+    currentCapacity: "available",
+    recentReferralCount: 3,
+    lastReferralAt: "2026-08-28T10:00:00+09:00",
+    responseStatus: "normal",
+    activeCaseCount: 2,
+    notes: "単品エクステリアを中心に対応。",
+    isActive: true
+  },
+  {
+    contractorId: "DEMO-CONTRACTOR-02",
+    businessName: "讃岐ガーデン（デモ）",
+    area: ["高松市", "丸亀市"],
+    workCategories: ["カーポート", "フェンス", "土間コンクリート", "外構一式"],
+    acceptingCases: true,
+    currentCapacity: "available",
+    recentReferralCount: 0,
+    lastReferralAt: null,
+    responseStatus: "normal",
+    activeCaseCount: 0,
+    notes: "新規登録。複数工種をまとめて対応可能。",
+    isActive: true
+  },
+  {
+    contractorId: "DEMO-CONTRACTOR-03",
+    businessName: "香川外構工房（デモ）",
+    area: ["丸亀市", "坂出市", "善通寺市"],
+    workCategories: ["フェンス", "土間コンクリート", "ブロック工事", "アプローチ"],
+    acceptingCases: true,
+    currentCapacity: "limited",
+    recentReferralCount: 1,
+    lastReferralAt: "2026-08-20T15:30:00+09:00",
+    responseStatus: "slow",
+    activeCaseCount: 1,
+    notes: "受付可能だが、着工時期は要確認。",
+    isActive: true
+  },
+  {
+    contractorId: "DEMO-CONTRACTOR-04",
+    businessName: "瀬戸内エクステリア（デモ）",
+    area: ["高松市", "丸亀市"],
+    workCategories: ["カーポート", "フェンス", "土間コンクリート"],
+    acceptingCases: true,
+    currentCapacity: "available",
+    recentReferralCount: 0,
+    lastReferralAt: null,
+    responseStatus: "paused",
+    activeCaseCount: 0,
+    notes: "連絡受付を一時停止中。",
+    isActive: true
+  },
+  {
+    contractorId: "DEMO-CONTRACTOR-05",
+    businessName: "まんのう外構（デモ）",
+    area: ["丸亀市", "まんのう町"],
+    workCategories: ["フェンス", "土間コンクリート"],
+    acceptingCases: true,
+    currentCapacity: "full",
+    recentReferralCount: 0,
+    lastReferralAt: null,
+    responseStatus: "normal",
+    activeCaseCount: 4,
+    notes: "現在の施工枠がいっぱいです。",
+    isActive: true
+  }
+];

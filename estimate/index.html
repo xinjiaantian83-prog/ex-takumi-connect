@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>カーポート簡易見積ツール｜登録施工店向け</title>
+  <meta name="description" content="登録施工店向けのカーポート簡易見積支援ツールです。入力した原価と希望粗利から参考価格を算出します。">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://ex-takumi-connect.com/estimate/">
+  <meta property="og:title" content="カーポート簡易見積ツール｜登録施工店向け">
+  <meta property="og:description" content="原価と必要利益から参考価格を算出する登録施工店向けツールです。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ex-takumi-connect.com/estimate/">
+  <link rel="stylesheet" href="./estimate.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"カーポート簡易見積ツール","applicationCategory":"BusinessApplication","inLanguage":"ja"}</script>
+</head>
+<body>
+  <header class="member-header">
+    <div class="header-inner">
+      <div>
+        <div class="brand">外構施工店紹介サービス</div>
+        <div class="member-label">登録施工店向け / MEMBER TOOL</div>
+      </div>
+      <a class="back-link" href="../index.html">施工店募集トップへ戻る</a>
+    </div>
+  </header>
+
+  <main class="estimate-shell">
+    <section class="intro">
+      <p class="eyebrow">CARPORT ESTIMATE</p>
+      <h1>カーポート簡易見積</h1>
+      <p class="lead">安さだけで決めず、必要な利益を確保した価格提示を支援する参考ツールです。</p>
+    </section>
+
+    <section class="estimate-card" aria-labelledby="product-heading">
+      <div class="section-heading"><span class="step">1</span><h2 id="product-heading">商品条件</h2></div>
+      <div id="carport-type-options" class="choice-grid" role="radiogroup" aria-label="カーポートタイプ"></div>
+      <div class="field-grid">
+        <label class="field" for="product-cost">商品原価
+              <span class="money-field"><span class="currency-prefix">¥</span><input id="product-cost" class="money-input" type="text" inputmode="numeric" pattern="[0-9,]*" autocomplete="off" value="180,000"></span>
+        </label>
+        <label class="field" for="labor-cost">標準施工原価
+              <span class="money-field"><span class="currency-prefix">¥</span><input id="labor-cost" class="money-input" type="text" inputmode="numeric" pattern="[0-9,]*" autocomplete="off"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="estimate-card" aria-labelledby="site-heading">
+      <div class="section-heading"><span class="step">2</span><h2 id="site-heading">現場追加条件</h2></div>
+      <div id="add-on-options" class="add-on-list"></div>
+      <label class="field other-cost" for="other-cost">その他追加費用
+              <span class="money-field"><span class="currency-prefix">¥</span><input id="other-cost" class="money-input" type="text" inputmode="numeric" pattern="[0-9,]*" autocomplete="off" value="0"></span>
+            </label>
+            <div class="add-on-total" aria-live="polite">
+              <span>現場追加費 合計</span>
+              <strong id="site-add-on-total">¥0</strong>
+            </div>
+    </section>
+
+    <section class="estimate-card" aria-labelledby="region-heading">
+      <div class="section-heading"><span class="step">3</span><h2 id="region-heading">地域補正</h2></div>
+      <div id="region-options" class="choice-grid" role="radiogroup" aria-label="地域補正"></div>
+    </section>
+
+    <section class="estimate-card" aria-labelledby="profit-heading">
+      <div class="section-heading"><span class="step">4</span><h2 id="profit-heading">必要粗利</h2></div>
+      <label class="field" for="desired-profit">希望する粗利額
+              <span class="money-field"><span class="currency-prefix">¥</span><input id="desired-profit" class="money-input" type="text" inputmode="numeric" pattern="[0-9,]*" autocomplete="off"></span>
+      </label>
+    </section>
+
+    <section class="estimate-card result-card" aria-labelledby="result-heading">
+      <div class="result-hero">
+        <p id="result-heading" class="result-label">推奨提示価格</p>
+        <p id="recommended-price" class="recommended-price">¥0</p>
+      </div>
+      <div class="result-body">
+        <label class="field quote-field" for="actual-price">実際に提示する価格
+              <span class="money-field"><span class="currency-prefix">¥</span><input id="actual-price" class="money-input" type="text" inputmode="numeric" pattern="[0-9,]*" autocomplete="off"></span>
+        </label>
+        <button id="reset-quote" class="subtle-button" type="button">推奨提示価格へ戻す</button>
+
+        <div class="result-grid" aria-live="polite">
+          <div class="metric"><span>想定総原価</span><strong id="total-cost">¥0</strong></div>
+          <div class="metric"><span>実際の想定粗利</span><strong id="actual-profit">¥0</strong></div>
+          <div class="metric"><span>粗利率</span><strong id="gross-margin">0.0%</strong></div>
+            <div class="metric compact"><span>利益確保ライン<small>必要粗利を確保するための最低目安価格</small></span><strong id="profit-floor">¥0</strong></div>
+            <div class="metric compact"><span>利益重視価格<small>安売りを避け、利益を優先する場合の参考価格</small></span><strong id="profit-focused-price">¥0</strong></div>
+        </div>
+
+        <div id="low-price-warning" class="warning" role="alert" hidden>
+          <p>利益確保ラインを下回っています。</p>
+          <p>この価格では想定粗利が <strong id="warning-profit">¥0</strong> まで低下します。</p>
+        </div>
+
+          <p class="pricing-principle">安さだけで決めず、必要な利益を確保した価格提示を支援します。</p>
+          <p class="disclaimer">表示価格・粗利は入力条件に基づく参考値です。現場条件・仕入価格・契約条件等を確認のうえ、最終価格は施工店自身で決定してください。</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="./estimate.config.js"></script>
+  <script src="./estimate.js"></script>
+</body>
+</html>

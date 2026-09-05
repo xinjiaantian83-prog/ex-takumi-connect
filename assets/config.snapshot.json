@@ -1,0 +1,13 @@
+{
+  "prefecture": "香川県",
+  "prefectureSlug": "kagawa",
+  "serviceName": "香川エクステリア施工店案内",
+  "operatorName": "EXた組",
+  "siteUrl": "https://ex-takumi-connect.com",
+  "phone": "080-7640-4526",
+  "email": "pantera.512@icloud.com",
+  "address": "〒791-3151 愛媛県伊予郡松前町東古泉686-11",
+  "ga4MeasurementId": "G-ELB2YD2ESD",
+  "formEndpoint": "",
+  "contractorFormEndpoint": "https://msiiqcqfawraokpdqdit.supabase.co/functions/v1/contractor-application"
+}
